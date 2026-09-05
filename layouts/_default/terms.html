@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{- $minTagPosts := .Site.Params.minTagPostsToIndex | default 1 -}}
+{{- if eq .Data.Plural "tags" -}}
+  {{- $currentTags := slice -}}
+  {{- $legacyTags := slice -}}
+  {{- range .Site.Taxonomies.tags.ByCount -}}
+    {{- $currentPages := where .Page.Pages "Section" "posts" -}}
+    {{- $legacyPages := where .Page.Pages "Section" "legacy" -}}
+    {{- if ge (len $currentPages) $minTagPosts -}}
+      {{- $currentTags = $currentTags | append (dict "page" .Page "count" (len $currentPages)) -}}
+    {{- end -}}
+    {{- if ge (len $legacyPages) $minTagPosts -}}
+      {{- $legacyTags = $legacyTags | append (dict "page" .Page "count" (len $legacyPages)) -}}
+    {{- end -}}
+  {{- end -}}
+  <section class="section">
+    <div class="container">
+      <div class="section__head"><h1 class="section__title">{{ i18n "tags" }}</h1></div>
+      <div class="tags-groups">
+        <section class="tags-group" aria-labelledby="current-tags-title">
+          <h2 id="current-tags-title" class="tags-group__title">Current articles</h2>
+          <div class="chips">
+            {{ range $currentTags }}
+              <a class="chip" href="{{ .page.RelPermalink }}">{{ .page.Title }} <span class="chip__count">({{ .count }})</span></a>
+            {{ else }}<div class="empty-state">{{ i18n "noTopics" }}</div>{{ end }}
+          </div>
+        </section>
+        <section class="tags-group" aria-labelledby="legacy-tags-title">
+          <h2 id="legacy-tags-title" class="tags-group__title">Legacy articles</h2>
+          <div class="chips">
+            {{ range $legacyTags }}
+              <a class="chip" href="{{ .page.RelPermalink }}">{{ .page.Title }} <span class="chip__count">({{ .count }})</span></a>
+            {{ else }}<div class="empty-state">{{ i18n "noTopics" }}</div>{{ end }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+{{- else -}}
+  <section class="section">
+    <div class="container">
+      <div class="section__head"><h1 class="section__title">{{ .Title }}</h1></div>
+      <div class="chips">
+        {{ range .Data.Terms.ByCount }}
+          <a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="chip__count">({{ .Count }})</span></a>
+        {{ else }}<div class="empty-state">{{ i18n "noTopics" }}</div>{{ end }}
+      </div>
+    </div>
+  </section>
+{{- end -}}
+{{ end }}

@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{ $bookStyles.RelPermalink }}" integrity="{{ $bookStyles.Data.Integrity }}">
   {{- $aboutStyles := resources.Get "css/about.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $aboutStyles.RelPermalink }}" integrity="{{ $aboutStyles.Data.Integrity }}">
+  {{- $tagsStyles := resources.Get "css/tags.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $tagsStyles.RelPermalink }}" integrity="{{ $tagsStyles.Data.Integrity }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>

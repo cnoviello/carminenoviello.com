@@ -1,0 +1,16 @@
+.tags-groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tags-group {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--paper-2);
+  border: .125rem solid var(--line);
+  border-radius: var(--radius);
+}
+
+.tags-group__title {
+  margin-block: 0 1.25rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
