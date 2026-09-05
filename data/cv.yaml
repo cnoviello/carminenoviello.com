@@ -1,0 +1,105 @@
+name: Carmine Noviello
+role: Business Unit Director
+headline: Technology, product and operations leader
+location: Naples, Italy
+email_encoded: Y2FybWluZS5ub3ZpZWxsb0BnbWFpbC5jb20=
+linkedin: https://www.linkedin.com/in/carminenoviello/
+portrait: /images/carmine-noviello.jpg
+
+profile:
+  - Senior director with more than 20 years of experience across ICT and electronics, spanning R&D, product innovation, operations, supply chain, procurement and international business development.
+  - I build teams and operating models around complex technology products. My work today sits at the intersection of digital identity, PKI, authentication, electronic signatures and business growth.
+
+experience:
+  - company: Namirial Group
+    location: Naples · Valencia · Hangzhou
+    roles:
+      - title: Group Business Unit Director
+        period: 2023–present
+        summary: Lead the SMB Signature & PKI Hardware business unit within an international ICT group of more than 1,400 people, combining digital-signature platforms for small and medium-sized businesses and professionals with hardware and software solutions for secure digital identity.
+        highlights:
+          - "Oversee digital-signature platforms for SMBs and professionals, together with tokens, smart cards, device drivers, PKCS #11 middleware and signing applications across desktop and mobile platforms."
+          - "Lead post-M&A product-synergy initiatives across the group: align portfolios and roadmaps, identify overlaps and complementary capabilities, define consolidation and reuse opportunities, and coordinate their evolution into a coherent offering."
+          - Global certification and compliance responsibilities, including the eIDAS regulatory framework.
+
+  - company: Bit4id
+    location: Naples · Barcelona · Hangzhou
+    roles:
+      - title: Board Member
+        period: 2023–present
+        summary: Provide strategic oversight and support the company’s alignment with Namirial Group’s international growth strategy in digital identity, security and PKI.
+
+      - title: Business Unit Manager
+        period: 2019–2022
+        highlights:
+          - Held full responsibility for a business unit with more than €11M in consolidated revenue and approximately €5M in operating expenditure.
+          - Increased revenue by €4M and EBITDA by €1M, while doubling the APAC export share.
+          - Led a distributed team of 30 people across Italy, Spain, Peru and India, covering R&D, production, procurement and sales.
+          - Introduced a new organizational model, KPIs, management-by-objectives and business-control tools.
+
+      - title: Senior R&D and Operations Manager
+        period: 2017–2018
+        highlights:
+          - Redesigned the supply-chain process, reducing product costs by 20% and increasing annual EBIT by more than €800K.
+          - Qualified manufacturing partners in China and developed international supplier relationships.
+          - Increased production to more than two million units per year and improved on-time delivery by over 70%.
+          - Led new hardware design and bill-of-material optimization, reducing investment and engineering overhead.
+
+      - title: Consultant
+        period: 2016–2017
+        highlights:
+          - Built a team of ten engineers and buyers and established a new procurement and production model in China.
+          - Managed development and manufacturing of the DigitalDNA Bluetooth security token, delivering 600,000 units in six months.
+
+  - company: AirQ Networks
+    location: Naples, Italy
+    roles:
+      - title: Chief Technology Officer and Co-Founder
+        period: 2010–2016
+        summary: Co-founded a technology startup focused on wireless sensors and home-automation systems.
+
+  - company: Institute of Cybernetics E Caianiello · CNR
+    location: Naples, Italy
+    roles:
+      - title: Researcher
+        period: 2004–2010
+        summary: Developed web-based and distributed systems at the Italian National Research Council.
+
+education:
+  - qualification: Executive Master of Business Administration
+    institution: SDA Bocconi, Milan
+    period: 2018–2020
+    note: Graduated with honors · Corporate Finance and Entrepreneurship tracks
+  - qualification: Master’s Degree in Computer Science
+    institution: University of Naples Federico II
+    period: 1998–2004
+    note: 110/110 with honors
+
+skills:
+  - group: Leadership and business
+    items:
+      - General and operations management
+      - Product and project management
+      - Business development and sales
+      - Budgeting and reporting
+      - Team building and leadership
+      - Negotiation and procurement
+  - group: Technology
+    items:
+      - Digital identity, PKI and authentication
+      - Embedded systems and electronics
+      - C, C++ and Python
+      - STM32 and wireless communications
+      - Hardware design and manufacturing
+      - Product certification and compliance
+
+languages:
+  - language: Italian
+    level: Native
+  - language: English
+    level: Fluent
+
+publications:
+  - title: Mastering STM32
+    description: Author of the comprehensive guide to STM32 microcontrollers, ARM Cortex-M architecture, embedded development and hardware design.
+    url: /mastering-stm32/

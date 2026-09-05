@@ -1,0 +1,128 @@
+{{ define "main" }}
+{{- $cv := hugo.Data.cv -}}
+<article class="cv">
+  <header class="cv-hero">
+    <div class="cv-hero__body">
+      <p class="cv-eyebrow">Curriculum vitae</p>
+      <h1>{{ $cv.name }}</h1>
+      <p class="cv-hero__role">{{ $cv.headline }}</p>
+      <p class="cv-hero__intro">{{ index $cv.profile 0 }}</p>
+      <div class="cv-actions" aria-label="Curriculum actions">
+        <button class="btn btn--primary cv-print" type="button" onclick="window.print()">Print or save as PDF</button>
+        <a class="btn btn--ghost" href="{{ $cv.linkedin }}" rel="me noopener" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="cv-hero__portrait">
+      <img src="{{ $cv.portrait | relURL }}" alt="Portrait of {{ $cv.name }}" width="720" height="1080">
+    </figure>
+  </header>
+
+  <div class="cv-grid">
+    <div class="cv-main">
+      <section class="cv-section cv-profile" aria-labelledby="cv-profile-title">
+        <p class="cv-section__number" aria-hidden="true">01</p>
+        <div>
+          <h2 id="cv-profile-title">Profile</h2>
+          {{ range $cv.profile }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </section>
+
+      <section class="cv-section" aria-labelledby="cv-experience-title">
+        <p class="cv-section__number" aria-hidden="true">02</p>
+        <div>
+          <h2 id="cv-experience-title">Experience</h2>
+          <div class="cv-timeline">
+            {{ range $cv.experience }}
+            <section class="cv-company">
+              <header class="cv-company__header">
+                <h3>{{ .company }}</h3>
+                <p>{{ .location }}</p>
+              </header>
+              {{ range .roles }}
+              <div class="cv-role">
+                <div class="cv-role__heading">
+                  <h4>{{ .title }}</h4>
+                  <p>{{ .period }}</p>
+                </div>
+                {{ with .summary }}<p class="cv-role__summary">{{ . }}</p>{{ end }}
+                {{ with .highlights }}
+                <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+                {{ end }}
+              </div>
+              {{ end }}
+            </section>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="cv-sidebar" aria-label="Education, skills and contact details">
+      <section class="cv-side-section cv-contact">
+        <h2>Contact</h2>
+        <dl>
+          <div><dt>Based in</dt><dd>{{ $cv.location }}</dd></div>
+          <div>
+            <dt>Email</dt>
+            <dd>
+              <button class="cv-email" type="button" data-cv-email="{{ $cv.email_encoded }}">Show email</button>
+              <noscript>Available through LinkedIn</noscript>
+            </dd>
+          </div>
+          <div><dt>Online</dt><dd><a href="{{ $cv.linkedin }}" rel="me noopener" target="_blank">LinkedIn profile</a></dd></div>
+        </dl>
+      </section>
+
+      <section class="cv-side-section">
+        <h2>Education</h2>
+        {{ range $cv.education }}
+        <article class="cv-education">
+          <p class="cv-education__period">{{ .period }}</p>
+          <h3>{{ .qualification }}</h3>
+          <p>{{ .institution }}</p>
+          <p class="cv-note">{{ .note }}</p>
+        </article>
+        {{ end }}
+      </section>
+
+      <section class="cv-side-section">
+        <h2>Expertise</h2>
+        {{ range $cv.skills }}
+        <div class="cv-skill-group">
+          <h3>{{ .group }}</h3>
+          <ul>{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        {{ end }}
+      </section>
+
+      <section class="cv-side-section">
+        <h2>Languages</h2>
+        <dl class="cv-languages">
+          {{ range $cv.languages }}<div><dt>{{ .language }}</dt><dd>{{ .level }}</dd></div>{{ end }}
+        </dl>
+      </section>
+
+      <section class="cv-side-section">
+        <h2>Publication</h2>
+        {{ range $cv.publications }}
+        <article class="cv-publication">
+          <h3><a href="{{ .url | relURL }}">{{ .title }}</a></h3>
+          <p>{{ .description }}</p>
+        </article>
+        {{ end }}
+      </section>
+    </aside>
+  </div>
+</article>
+<script>
+  document.querySelectorAll("[data-cv-email]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var address = window.atob(button.dataset.cvEmail);
+      var link = document.createElement("a");
+      link.href = "mailto:" + address;
+      link.textContent = address;
+      button.replaceWith(link);
+    }, { once: true });
+  });
+</script>
+{{ end }}

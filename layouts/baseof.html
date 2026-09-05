@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="{{ $bookStyles.RelPermalink }}" integrity="{{ $bookStyles.Data.Integrity }}">
   {{- $aboutStyles := resources.Get "css/about.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $aboutStyles.RelPermalink }}" integrity="{{ $aboutStyles.Data.Integrity }}">
+  {{- if eq .Layout "cv" }}
+  {{- $cvStyles := resources.Get "css/cv.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $cvStyles.RelPermalink }}" integrity="{{ $cvStyles.Data.Integrity }}">
+  {{- end }}
   {{- $tagsStyles := resources.Get "css/tags.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $tagsStyles.RelPermalink }}" integrity="{{ $tagsStyles.Data.Integrity }}">
 </head>

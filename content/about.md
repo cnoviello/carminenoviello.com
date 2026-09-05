@@ -32,6 +32,12 @@ Today my work sits at the intersection of **technology, product development and 
 
 Despite spending much more of my professional life managing products, projects and engineering teams, I still enjoy understanding how things work — whether that means experimenting with a microcontroller, designing something, writing software or exploring a new technology.
 
+## Curriculum vitae
+
+For a structured overview of my professional experience, education and areas of expertise, you can read my curriculum vitae online or save it as a PDF.
+
+{{< cv-link >}}
+
 ## About this site
 
 I started this blog in **2007**.

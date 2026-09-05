@@ -23,3 +23,9 @@
 .about-photo ~ h2 {
   clear: both;
 }
+
+.post__body a.btn--primary,
+.post__body a.btn--primary:hover {
+  color: var(--on-dark);
+  text-decoration: none;
+}
