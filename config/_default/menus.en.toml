@@ -1,6 +1,6 @@
 [[main]]
-name = "Archive"
-url = "/archives/"
+name = "Legacy"
+url = "/legacy/"
 weight = 10
 
 [[main]]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default .Site.Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}?v=1">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ "favicon-48x48.png" | relURL }}?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}?v=1">
+  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}?v=1">
+  {{- $callouts := resources.Get "css/callouts.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $callouts.RelPermalink }}" integrity="{{ $callouts.Data.Integrity }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>
+  {{ partial "header.html" . }}
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts.html" . }}
+</body>
+</html>

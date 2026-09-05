@@ -1,0 +1,6 @@
+# Hugo build output and generated resource cache
+/public/
+/resources/_gen/
+
+# Local operating-system metadata
+.DS_Store

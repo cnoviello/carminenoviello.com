@@ -16,3 +16,4 @@ category = 'categories'
 
 [permalinks]
 posts = '/:year/:month/:day/:slug/'
+legacy = '/:year/:month/:day/:slug/'

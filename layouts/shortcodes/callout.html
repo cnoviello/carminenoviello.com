@@ -1,0 +1,7 @@
+{{- $type := lower (.Get "type" | default "info") -}}
+{{- $labels := dict "info" "Note" "note" "Note" "warning" "Warning" "error" "Important" -}}
+{{- if not (index $labels $type) -}}{{- $type = "info" -}}{{- end -}}
+<aside class="callout callout--{{ $type }}" role="note" aria-label="{{ index $labels $type }}">
+  <p class="callout__title">{{ index $labels $type }}</p>
+  <div class="callout__content">{{ .Inner | markdownify }}</div>
+</aside>
