@@ -1,3 +1,18 @@
 baseURL = 'https://www.carminenoviello.com/'
-locale = 'en-us'
-title = 'Carmine Noviello - Personal Blog'
+locale = 'en-US'
+title = 'Carmine Noviello'
+theme = 'stacknote'
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 10
+
+[outputs]
+home = ['HTML', 'RSS', 'JSON']
+
+[taxonomies]
+tag = 'tags'
+category = 'categories'
+
+[permalinks]
+posts = '/:year/:month/:day/:slug/'
