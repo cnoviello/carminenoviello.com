@@ -1,0 +1,25 @@
+.about-photo {
+  width: min(12.8rem, 42%);
+  max-width: 12.8rem;
+  float: right;
+  margin: 0 0 1.5rem 2.5rem;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center 16%;
+  border: .125rem solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hard);
+}
+
+.post__body figure.about-photo {
+  margin-top: 0;
+}
+
+.about-photo ~ h2 {
+  clear: both;
+}

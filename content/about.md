@@ -6,6 +6,8 @@ title = 'About'
 
 # About me
 
+{{< figure src="/images/carmine-noviello.jpg" alt="Portrait of Carmine Noviello" class="about-photo" >}}
+
 My name is **Carmine Noviello**. I'm a technology manager, author, engineer and lifelong developer based in Italy.
 
 My relationship with computers started in the 1980s, when I was still a child. What began as curiosity gradually became a profession. I started programming with Clipper and Visual Basic, later moving to Unix systems, C/C++ and Python — a language that has remained one of my favourite tools for turning ideas into working software.

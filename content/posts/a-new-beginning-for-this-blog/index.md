@@ -1,9 +1,9 @@
 +++
 title = "A new beginning for this blog. Once again."
 slug = "a-new-beginning-for-this-blog"
-url = "/2022/11/22/a-new-beginning-for-this-blog/"
-date = "2022-11-22T18:12:06Z"
-lastmod = "2022-12-02T06:37:03Z"
+date = "2026-09-05T16:00:00+02:00"
+lastmod = "2026-09-05T16:00:00+02:00"
+aliases = ["/2022/11/22/a-new-beginning-for-this-blog/"]
 draft = false
 description = "The very first post of this personal blog was dated back in 2007, when I bought the domain name and configured a WordPress hosting. At that time, the blog was…"
 categories = ["Others"]
