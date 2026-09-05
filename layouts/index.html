@@ -101,7 +101,7 @@
         <div class="about__avatar" aria-hidden="true">{{ .Site.Params.authorInitials | default "SN" }}</div>
         <div class="about__body">
           <h2 class="about__title">{{ i18n "about" }}</h2>
-          <p class="about__text">{{ .Site.Params.aboutIntro }}</p>
+          <p class="about__text">{{ .Site.Params.aboutIntro | safeHTML }}</p>
           <div class="about__links">
             {{ with .Site.Params.github }}<a class="about__link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "github" }} →</a>{{ end }}
             <a class="about__link" href="{{ .Site.Params.authorPage | default "/about/" | relURL }}">{{ i18n "about" }} →</a>
