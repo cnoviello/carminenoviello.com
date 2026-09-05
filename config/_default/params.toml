@@ -16,3 +16,12 @@ showAbout = true
 showNewsletter = true
 minTagPostsToIndex = 1
 themeColor = '#FAFAF7'
+
+[book]
+eyebrow = 'THE BOOK'
+title = 'Mastering STM32'
+description = 'A step-by-step guide to the most complete ARM Cortex-M platform, using the official STM32Cube development environment.'
+url = 'https://leanpub.com/mastering-stm32-2nd/'
+cta = 'Explore the book'
+image = 'images/mastering-stm32-cover.png'
+alt = 'Cover of Mastering STM32, Second Edition'
