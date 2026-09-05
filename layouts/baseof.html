@@ -9,6 +9,8 @@
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}?v=1">
   {{- $callouts := resources.Get "css/callouts.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $callouts.RelPermalink }}" integrity="{{ $callouts.Data.Integrity }}">
+  {{- $bookStyles := resources.Get "css/book.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $bookStyles.RelPermalink }}" integrity="{{ $bookStyles.Data.Integrity }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>

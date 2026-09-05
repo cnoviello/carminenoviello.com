@@ -1,0 +1,13 @@
+.post__cover.post__cover--book {
+  display: grid;
+  place-items: center;
+  background: #e9dfd0;
+}
+
+.post__cover.post__cover--book img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(44rem, 72vh);
+  object-fit: contain;
+}

@@ -3,6 +3,10 @@
   {{ $articlesPage := .Site.GetPage $mainSection }}
   {{ $articles := where .Site.RegularPages "Section" $mainSection }}
   {{ $sorted := $articles.ByDate.Reverse }}
+  {{ $legacyPage := .Site.GetPage "legacy" }}
+  {{ $legacyArticles := where .Site.RegularPages "Section" "legacy" }}
+  {{ $legacySorted := $legacyArticles.ByDate.Reverse }}
+  {{ $legacyFeatured := first 3 $legacySorted }}
   {{ $featured := first 1 $sorted }}
   {{ $rest := after 1 $sorted }}
   {{ $big := first 1 $rest }}
@@ -42,6 +46,26 @@
   </section>{{ end }}
 
   {{ partial "book-promo.html" . }}
+
+  {{ if gt (len $legacyFeatured) 0 }}<section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <div class="featured__tag">FROM THE ARCHIVE</div>
+          <h2 class="section__title">Legacy articles</h2>
+        </div>
+        {{ with $legacyPage }}<a class="section__all" href="{{ .RelPermalink }}">Explore the archive →</a>{{ end }}
+      </div>
+      <div class="latest__grid">
+        {{ range first 1 $legacyFeatured }}{{ partial "post-card.html" (dict "page" . "variant" "lead") }}{{ end }}
+        <div class="mini-cards">
+          {{ range after 1 $legacyFeatured }}
+          {{ partial "post-card.html" (dict "page" . "variant" "mini") }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>{{ end }}
 
   {{ if gt (len $rest) 0 }}<section class="section">
     <div class="container">
