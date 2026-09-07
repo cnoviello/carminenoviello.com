@@ -19,6 +19,8 @@
   {{- end }}
   {{- $tagsStyles := resources.Get "css/tags.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $tagsStyles.RelPermalink }}" integrity="{{ $tagsStyles.Data.Integrity }}">
+  {{- $headerStyles := resources.Get "css/header.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $headerStyles.RelPermalink }}" integrity="{{ $headerStyles.Data.Integrity }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>
