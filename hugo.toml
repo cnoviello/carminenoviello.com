@@ -4,6 +4,10 @@ title = 'Carmine Noviello'
 theme = 'stacknote'
 enableRobotsTXT = true
 
+[services]
+  [services.googleAnalytics]
+    ID = 'G-9E2SKXXPMZ'
+
 [pagination]
 pagerSize = 10
 
